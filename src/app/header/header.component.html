@@ -1,0 +1,37 @@
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active">
+        <a routerLink="projets">Gestion de projet</a>
+      </li>
+      <!-- <li routerLinkActive="active">
+        <a routerLink="utilisateurs">utilisateurs</a>
+      </li> -->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li routerLinkActive="active" *ngIf="!isAuth">
+        <a routerLink="authentification/signup" >Créer un compte</a>
+      </li>
+      <li routerLinkActive="active" *ngIf="!isAuth">
+        <a routerLink="authentification/signin">Connexion</a>
+      </li>
+      <li *ngIf="isAuth"  style="cursor: pointer;" >
+        <button  mat-mini-fab  class="dropdown-toggle account-button color-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <mat-icon aria-label="icon-button"> account_circle </mat-icon>
+
+        </button>
+        <ul class="dropdown-menu">
+          <li tyle="cursor: pointer;"><a> {{currentUser?.prenom}} - {{currentUser?.nom}}</a> </li>
+          <li class="dropdown-item" href="#"><a> {{currentUser?.email}}</a></li>
+          <li (click)="signOut()" style="cursor: pointer;">
+            <a >Déconnexion</a>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+

@@ -1,0 +1,12 @@
+tr.MyProject{
+background-color: #0ec4c430;
+}
+tbody> tr:hover{
+  background-color: blanchedalmond;
+  cursor: pointer;
+}
+td, th {
+  width: 25%;
+  padding: 0 7px !important;
+}
+

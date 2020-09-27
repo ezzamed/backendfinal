@@ -1,0 +1,16 @@
+<mat-card-content class="container-form" >
+    <mat-card-title>Connexion</mat-card-title>
+    <form [formGroup]='signInForm' (ngSubmit)="onSubmit()" autocomplete="off">
+        <mat-form-field>
+            <input id="email" matInput placeholder="Enter your email" formControlName="email" required>
+          </mat-form-field>
+          <mat-form-field>
+              <input id="password" formControlName="password" matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+            <button mat-raised-button class="login-button">
+                <mat-icon>input</mat-icon> Se connecter
+            </button>
+    </form>
+    <p class="text-danger">{{ errorMessage }}</p>
+  </mat-card-content>

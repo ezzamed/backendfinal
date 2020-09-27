@@ -1,0 +1,49 @@
+ <mat-card-content class="container-form" >
+      <mat-card-title>Créer un compte</mat-card-title>
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" autocomplete="off">
+
+        <mat-form-field>
+          <input type="text"
+                 id="prenom"
+                 maxlength="20"
+                 matInput
+                 required
+                 placeholder="prenom"
+                 formControlName="prenom">
+        </mat-form-field>
+        <mat-form-field >
+            <input type="text"
+            id="nom"
+            maxlength="20"
+            matInput
+            placeholder="nom"
+            formControlName="nom"
+            required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="text"
+            id="email"
+            matInput
+            placeholder="email"
+            required
+            formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+            <input type="password"
+            id="password"
+            matInput
+            placeholder="password"
+            required
+            formControlName="password">
+        </mat-form-field>
+
+        <button mat-raised-button class="submit-button" [disabled]="signUpForm.invalid">
+        <!-- <button mat-raised-button class="submit-button" > -->
+          <mat-icon>input</mat-icon> Créer mon compte
+        </button>
+      </form>
+      <p class="text-danger">{{ errorMessage }}</p>
+    </mat-card-content>
+
+
